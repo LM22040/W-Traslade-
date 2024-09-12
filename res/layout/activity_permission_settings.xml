@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@color/background_light">
+
+    <!-- Encabezado de la pantalla -->
+    <TextView
+        android:id="@+id/tv_permission_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/permission_header"
+        android:textSize="24sp"
+        android:textColor="@color/primary_text"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"/>
+
+    <!-- Mensaje de advertencia -->
+    <TextView
+        android:id="@+id/tv_permission_warning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/permission_warning"
+        android:textSize="16sp"
+        android:textColor="@color/warning_text"
+        android:layout_below="@id/tv_permission_header"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:textAlignment="center"/>
+
+    <!-- Lista de permisos -->
+    <LinearLayout
+        android:id="@+id/ll_permission_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_permission_warning"
+        android:layout_marginTop="32dp"
+        android:orientation="vertical">
+
+        <!-- Ejemplo de un permiso: Acceso al Micrófono -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+
+            <ImageView
+                android:id="@+id/iv_microphone_icon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_microphone"
+                android:layout_alignParentStart="true"/>
+
+            <TextView
+                android:id="@+id/tv_microphone_permission"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/microphone_permission"
+                android:textSize="18sp"
+                android:layout_toEndOf="@id/iv_microphone_icon"
+                android:layout_marginStart="16dp"
+                android:layout_centerVertical="true"/>
+
+            <Switch
+                android:id="@+id/switch_microphone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"/>
+        </RelativeLayout>
+
+        <!-- Ejemplo de otro permiso: Acceso al Almacenamiento -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+
+            <ImageView
+                android:id="@+id/iv_storage_icon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_storage"
+                android:layout_alignParentStart="true"/>
+
+            <TextView
+                android:id="@+id/tv_storage_permission"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/storage_permission"
+                android:textSize="18sp"
+                android:layout_toEndOf="@id/iv_storage_icon"
+                android:layout_marginStart="16dp"
+                android:layout_centerVertical="true"/>
+
+            <Switch
+                android:id="@+id/switch_storage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"/>
+        </RelativeLayout>
+
+        <!-- Ejemplo de otro permiso: Notificaciones -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_notifications_icon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_notifications"
+                android:layout_alignParentStart="true"/>
+
+            <TextView
+                android:id="@+id/tv_notifications_permission"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/notifications_permission"
+                android:textSize="18sp"
+                android:layout_toEndOf="@id/iv_notifications_icon"
+                android:layout_marginStart="16dp"
+                android:layout_centerVertical="true"/>
+
+            <Switch
+                android:id="@+id/switch_notifications"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <!-- Botón de aceptar -->
+    <Button
+        android:id="@+id/btn_accept_permissions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/accept_permissions"
+        android:textColor="@android:color/white"
+        android:backgroundTint="@color/button_color"
+        android:layout_below="@id/ll_permission_list"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:padding="12dp"/>
+
+</RelativeLayout>
